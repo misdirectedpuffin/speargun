@@ -26,6 +26,7 @@ setup(
     name='workflow',
     version=get_version(),
     packages=find_packages(),
+    setup_requires=['pytest-runner'],
     install_requires=get_requirements('requirements.txt'),
     tests_require=get_requirements('requirements_dev.txt'),
     entry_points={
