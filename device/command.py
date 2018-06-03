@@ -9,8 +9,8 @@ from pssh.exceptions import (AuthenticationException, ConnectionErrorException,
                              SSHException)
 from workflow_common.helper import get_config_file, load, riser_config_dir
 from device.device import (copy_from_remote, get_pssh_client,
-                    has_file_extension, process_hosts,
-                    get_config_value)
+                           has_file_extension, process_hosts,
+                           get_config_value)
 
 StreamHandler(sys.stdout).push_application()
 logger = Logger(__name__)
