@@ -23,7 +23,7 @@ def get_requirements(file):
     return [str(ir.req) for ir in requirements if not None]
 
 setup(
-    name='workflow_widgets',
+    name='speargun',
     version=get_version(),
     packages=find_packages(),
     setup_requires=['pytest-runner'],
