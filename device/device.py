@@ -1,3 +1,4 @@
+"""Functions related to pulling media from a device."""
 import os
 import sys
 from configparser import NoOptionError, NoSectionError
@@ -6,7 +7,6 @@ import click
 from gevent import joinall
 from logbook import Logger, StreamHandler
 from pssh.clients import ParallelSSHClient, SSHClient
-from pssh.utils import load_private_key
 
 StreamHandler(sys.stdout).push_application()
 logger = Logger(__name__)
@@ -66,14 +66,14 @@ def get_pssh_client(host, private_key_path, single_copy=False, port=8022, user='
         return SSHClient(
             host,
             port=port,
-            pkey=load_private_key(private_key_path),
+            pkey=private_key_path,
             user=user
         )
 
     return ParallelSSHClient(
         host,
         port=port,
-        pkey=load_private_key(private_key_path),
+        pkey=private_key_path,
         user=user
     )
 
